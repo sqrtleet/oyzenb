@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  api:
+    build:
+      context: ./app
+    container_name: todo_api
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - 777:777
+    depends_on:
+      - db
+
+  db:
+    image: postgres:latest
+    restart: always
+    container_name: ${POSTGRES_HOST}
+    env_file: .env
+    ports:
+      - ${POSTGRES_PORT}:${POSTGRES_PORT}
+    volumes:
+      - /opt/kekw/postgres:/var/lib/postgresql/data

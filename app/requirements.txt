@@ -1,0 +1,10 @@
+fastapi==0.110.0
+uvicorn==0.28.0
+pydantic==2.6.1
+pydantic-settings==2.1.0
+loguru==0.7.2
+psycopg2==2.9.9
+SQLAlchemy==2.0.25
+passlib==1.7.4
+PyJWT==2.3.0
+python-multipart==0.0.9
